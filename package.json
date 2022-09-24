@@ -1,0 +1,18 @@
+{
+  "name": "browser-touchlib",
+  "homepage": "https://github.com/x2jia/touch-lib",
+  "description": "mobile browser touch event lib",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:x2jia/touch-lib.git"
+  },
+  "keywords": [
+    "browser",
+    "touch",
+    "event"
+  ],
+  "author": "JY",
+  "main": "index.js",
+  "license": "(996ICU License)",
+  "version": "1.0.1"
+}
