@@ -280,7 +280,7 @@ function unregister(k){
 
 }
 
-const exports = {
+const _exports = {
   register,
   unregister
 }
@@ -288,8 +288,8 @@ const exports = {
 if(typeof module === 'object' && module.exports){
   module.exports = function(o){
     _$ = o
-    return exports
+    return _exports
   }
 }else if(typeof window === 'object'){
-  window.jFingerSlideMob = exports
+  window.jFingerSlideMob = _exports
 }
