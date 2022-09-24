@@ -98,15 +98,16 @@ browser-touchlib
 
 ***id***, string,  An html element id or null
 
-***object*** : {
-  handler, A callback function,  (event) => {}
-  option: {
-    scale，number,  (0, ∞)
-    style，string
-    tip, boolean
-    orientation, string,  {"-","|","-|"}
-  }
+***object*** : {  
+  handler, A callback function,  (event) => {}  
+  option: {  
+    scale，number,  (0, ∞)  
+    style，string  
+    tip, boolean  
+    orientation, string,  {"-","|","-|"}  
+  }  
 }
+
 ***return value***
 A unique value，unregister will use it
 
