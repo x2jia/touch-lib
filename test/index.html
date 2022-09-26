@@ -24,7 +24,7 @@
   </style>
   <script type="text/javascript">
     $(function(){
-      const id1 = window.jFingerSlideMob.register('area', {
+      const id1 = jFingerSlideMob.register('area', {
         handler(event){
           console.log(event.type, event)
         },
@@ -37,8 +37,8 @@
       })
 
       setTimeout(() => {
-        // window.jFingerSlideMob.unregister(id1)
-      }, 3000)
+        // jFingerSlideMob.unregister(id1)
+      }, 2000)
 
     })
   </script>

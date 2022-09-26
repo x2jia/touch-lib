@@ -32,7 +32,7 @@ browser-touchlib
   </style>
   <script type="text/javascript">
     $(function(){
-      const id1 = window.jFingerSlideMob.register('area', {
+      const id1 = window.jFingerSlideMob.register(null, {
         handler(event){
           console.log(event.type, event)
         },
@@ -98,15 +98,40 @@ browser-touchlib
 
 ***id***, string,  An html element id or null
 
-***object*** : {  
-  handler, A callback function,  (event) => {}  
-  option: {  
-    scale，number,  (0, ∞)  
-    style，string  
-    tip, boolean  
-    orientation, string,  {"-","|","-|"}  
-  }  
+***object*** :
+
+```
+{
+  handler, A callback function,  (event) => {}
+  option: {
+    scale, number,  (0, ∞)
+    style, string
+    tip, boolean
+    orientation, string,  {"-","|","-|"}
+  }
 }
+```
+
+***event***
+
+```
+{
+    "clientX": 221.41177368164062,  raw event value
+    "clientY": 131.2941131591797,
+    "pageX": 221.41177368164062,
+    "pageY": 131.2941131591797,
+    "radiusX": 13.529411315917969,
+    "radiusY": 13.529411315917969,
+    "screenX": 267.20001220703125,
+    "screenY": 281.6000061035156,
+    "type": "touchmove", string  {"touchstart", "touchmove", "touchend", "touchcancel"}
+    "progressX": 0.4831373087565104, number  Relative to starting point  X direction
+    "progressY": -0.47058815002441406, number  Relative to starting point  Y direction
+    "deltaX": 0.01882364908854167, number  Relative to previous point  X direction
+    "deltaY": -0.006274464925130208, number  Relative to previous point  Y direction
+    "orientation": "|"
+}
+```
 
 ***return value***
 A unique value，unregister will use it
