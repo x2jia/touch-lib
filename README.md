@@ -32,7 +32,7 @@ browser-touchlib
   </style>
   <script type="text/javascript">
     $(function(){
-      const id1 = window.jFingerSlideMob.register(null, {
+      const id1 = jFingerSlideMob.register('area', {
         handler(event){
           console.log(event.type, event)
         },
@@ -44,13 +44,13 @@ browser-touchlib
         }
       })
       setTimeout(() => {
-        window.jFingerSlideMob.unregister(id1)
+        jFingerSlideMob.unregister(id1)
       }, 5000)
 
     })
   </script>
 </head><body>
-  <div id="area" class="area" style="touch-action: none;" >
+  <div id="area" class="area" style="touch-action: none;">
     hello
   </div>
 </body></html>
@@ -61,7 +61,7 @@ browser-touchlib
 ```js
     const jFingerSlideMob = require('browser-touchlib')($)
 
-    const moveid = jFingerSlideMob.register('midea-wrapper', {
+    const moveid = jFingerSlideMob.register({
       handler: (event) => {
         if(event.type !== 'touchmove'){
           this.state.currentTime = -1;
@@ -94,9 +94,9 @@ browser-touchlib
 
 ### API
 
-**register(id, object)**
+#### register(id, object)
 
-***id***, string,  An html element id or null
+***id***, string,  optional An html element id or null
 
 ***object*** :
 
@@ -104,19 +104,19 @@ browser-touchlib
 {
   handler, A callback function,  (event) => {}
   option: {
-    scale, number,  (0, ∞)
-    style, string
-    tip, boolean
-    orientation, string,  {"-","|","-|"}
+    scale, number,  optional (0, ∞)
+    style, string,  optional
+    tip, boolean,  optional
+    orientation, string,  optional {"-","|","-|"}
   }
 }
 ```
 
-***event***
+***event*** :
 
 ```
 {
-    "clientX": 221.41177368164062,  raw event value
+    "clientX": 221.41177368164062,  browser raw event value
     "clientY": 131.2941131591797,
     "pageX": 221.41177368164062,
     "pageY": 131.2941131591797,
@@ -136,7 +136,7 @@ browser-touchlib
 ***return value***
 A unique value，unregister will use it
 
-**unregister(return_value)**
+#### unregister(return_value)
 
 ***return_value***, A unique value returned by register
 
